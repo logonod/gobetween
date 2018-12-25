@@ -7,6 +7,7 @@
 package balance
 
 import (
+	"../config"
 	"../core"
 	"errors"
 	"hash/fnv"
@@ -18,10 +19,15 @@ import (
 type IphashBalancer struct{}
 
 /**
+ * Constructor
+ */
+func NewIphashBalancer(cfg config.BalanceConfig) interface{} {
+	return &IphashBalancer{}
+}
+
+/**
  * Elect backend using iphash strategy
  * Using fnv1a for speed
- *
- * TODO: Improve as needed
  */
 func (b *IphashBalancer) Elect(context core.Context, backends []*core.Backend) (*core.Backend, error) {
 
