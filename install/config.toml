@@ -3,7 +3,13 @@ level = "info"   # "debug" | "info" | "warn" | "error"
 output = "stdout" # "stdout" | "stderr" | "/path/to/gobetween.log"
 
 [api]
-enabled = false  # true | false
+enabled = true  # true | false
+bind = ":8888"  # "host:port"
+cors = false    # cross-origin resource sharing
+
+  [api.basic_auth]   # (optional) Enable HTTP Basic Auth
+  login = "admin"    # HTTP Auth Login
+  password = "xxx"  # HTTP Auth Password
 
 [defaults]
 max_connections = 50              # Maximum simultaneous connections to the server
