@@ -52,7 +52,7 @@ bind = "0.0.0.0:443"
   [servers.udp.healthcheck]
   kind = "exec"
   interval = "4s"
-  timeout = "1s"
+  timeout = "2s"
   
   exec_command = "/home/ubuntu/gobetween/install/ping.sh"  # (required) command to execute
   exec_expected_positive_output = "1"           # (required) expected output of command in case of success
